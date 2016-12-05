@@ -2,20 +2,14 @@
 <html>
 <head>
 	<title>Calendar</title>
-	<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" title="no title" charset="utf-8">
 </head>
 <body>
-  <div class="window">
-    <img src="http://res.cloudinary.com/dwbu8qlck/image/upload/v1479940185/burger-poster-on-chalkboard_1515234_dko8pz.jpg" />
-  </div>
-  <div class="window">
-    <img src="http://res.cloudinary.com/dwbu8qlck/image/upload/v1479940185/burger-poster-on-chalkboard_1515234_dko8pz.jpg" />
-  </div>
-  <div class="window">
-    <img src="http://res.cloudinary.com/dwbu8qlck/image/upload/v1479940185/burger-poster-on-chalkboard_1515234_dko8pz.jpg" />
-  </div>
-  <div class="window">
-    <img src="http://res.cloudinary.com/dwbu8qlck/image/upload/v1479940185/burger-poster-on-chalkboard_1515234_dko8pz.jpg" />
-  </div>
+  <ul class="allwindows">
+    <% @windows.each do |window| %>
+    <li>
+      <%= image_tag window.image %>
+    </li>
+    <% end %>
+  </ul>
 </body>
 </html>

@@ -14,3 +14,18 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+
+$(document).on('turbolinks:load', function(){
+  //Hide first window
+  $(".allwindows li img").hide();
+  // Add a button with the date
+  var button = $("<button>1</button>").addClass( "windowbutton" );
+  $(".allwindows li").append(button);
+  // When button clicked -> Show img.
+  $("button").click(function() {
+    $(this).prev().show();
+  // get rid of button
+  $(this).remove();
+  });
+});

@@ -18,13 +18,24 @@
 
 $(document).on('turbolinks:load', function(){
   //Hide first window
-  $(".allwindows li a").hide();
+  $(".number").hide();
+  $(".allwindows a").hide();
   // Add a button with the date
-  var button = $("<button>1</button>").addClass( "windowbutton" );
+  var buttonText = $(".number").each(function( index ) {
+    console.log ($(this).text() );
+  });
+  // var buttonText = $(".number").each(function( index ) {
+  //   var buttonNumber = ($(this).text() );
+  //   return buttonNumber;
+  // });
+
+  // var buttonData = $(".allwindows li p").html();
+  var button = $("<button>" + buttonText + "</button>").addClass( "windowbutton" );
   $(".allwindows li").append(button);
   // When button clicked -> Show img.
   $("button").click(function() {
-    $(this).prev().show();
+    $(this).prev().prev().show();
+    $( 'li:first-child', $( this ).parents ( 'ul' ) ).html ();
   // get rid of button
   $(this).remove();
   });

@@ -18,7 +18,7 @@
 
 $(document).on('turbolinks:load', function(){
   //Hide first window
-  $(".allwindows li img").hide();
+  $(".allwindows li a").hide();
   // Add a button with the date
   var button = $("<button>1</button>").addClass( "windowbutton" );
   $(".allwindows li").append(button);

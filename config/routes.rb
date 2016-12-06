@@ -3,4 +3,6 @@ Rails.application.routes.draw do
 
   root to: 'windows#index'
 
+  resources :windows
+
 end

@@ -3,13 +3,11 @@
 <head>
 	<title>Calendar</title>
 </head>
-<body>
-  <ul class="allwindows">
-    <% @windows.each do |window| %>
-    <li>
-      <%= image_tag window.image %>
-    </li>
-    <% end %>
-  </ul>
-</body>
+	  <ul class="allwindows">
+	    <% @windows.each do |window| %>
+	    <li>
+				<%= link_to image_tag(window.image), window_path(window.id)%>
+	    </li>
+	    <% end %>
+	  </ul>
 </html>

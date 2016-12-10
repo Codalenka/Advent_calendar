@@ -17,39 +17,39 @@
 
 
 $(document).on('turbolinks:load', function(){
-  //Hide first window
+  //Hide the number
   $(".number").hide();
+  //Hide the image (image = also link to showpage)
   $(".allwindows a").hide();
-  // Add a button with the date
-//
-// $(".number").each(function() {
-//     var data = console.log(($(this).text()));
-//       // $("data").each(function() {
-//       //   console.log();
-  //     //     })
-//   // })
-// var buttonData = $(".allwindows li p").each(function() {
-//   console.log($(this).text());
-// })
 
-// $("buttonData").each(function(){
-//
-// })
-// .html();
-// // var buttonData =
-$(".allwindows li").each(function() {
-  var buttonData = $(this).text();
-  var button = $("<button>" + buttonData + "</button>").addClass( "windowbutton" );
-  $(this).append(button);
+// Loop through all li's
+$(".allwindows li").each(function(index) {
+  // Set the index + 1 as the buttontext
+  var buttonData = index + 1;
+  // Also add class and attr to disable
+  var button = $("<button>" + buttonData + "</button>").addClass( "windowbutton" ).attr( "disabled", false);
+  // Add button to li if not already there.
+    if ( !$(this).attr("windowbutton")) {
+    $(this).append(button);
+  }
 })
-
-
 
   // When button clicked -> Show img.
   $("button").click(function() {
     $(this).prev().prev().show();
     $( 'li:first-child', $( this ).parents ( 'ul' ) ).html ();
-  // get rid of button
+  // Get rid of button
   $(this).remove();
   });
+
+  // Make button only clickable when current date is today or in the past.
+
+
+
+
+  // $(function() {
+  //   var today = new Date(),
+  //
+  //
+  // })
 });

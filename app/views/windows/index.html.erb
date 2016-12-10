@@ -6,8 +6,9 @@
 	  <ul class="allwindows">
 	    <% @windows.each do |window| %>
 	    <li>
-				<%= link_to image_tag(window.image), window_path(window.id)%>
-				<p class="number"><%= window.number%></p>
+				<%= link_to image_tag(window.image), "https://www.youtube.com/watch?v=3PgNPc-iFW8" %>
+				<!-- <%= link_to image_tag(window.image), window_path(window.id)%> -->
+				<p class=number><%= window.number%></p>
 	    </li>
 	    <% end %>
 	  </ul>

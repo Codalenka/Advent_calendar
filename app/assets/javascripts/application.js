@@ -15,36 +15,37 @@
 //= require turbolinks
 //= require_tree .
 
-var date = new Date();
-var dayOfMonth = date.getDate();
-var month = date.getMonth() + 1;
-var year = date.getFullYear();
+
 
 $(document).on('turbolinks:load', function(){
-  //Hide the number
+  //Hide the number of window
   $(".number").hide();
-  //Hide the image (image = also link to showpage)
+  //Hide the image of window (image = also link
   $(".allwindows a").hide();
 
-// Loop through all li's
-$(".allwindows li").each(function(index) {
-  // Set the index + 1 as the buttontext
-  var buttonData = index + 1;
-  // Also add class and attr to disable
-  var button = $("<button>" + buttonData + "</button>").addClass( "windowbutton" )
-  // Disable button when date is in the past. Now only usable for 2016 -> delete year to make usable for 2017 etc.
-  if ( year <= 2016 && month < 12) {
-      button.attr( "disabled", true);
-  } else if (buttonData > dayOfMonth) {
-      button.attr( "disabled", true);
-  } else {
-    button.attr( "disabled", false);
-  }
-  // Add button to li if not already there.
-    if ( !$(this).attr("windowbutton")) {
-    $(this).append(button);
-  }
-})
+  // set varibale for time.
+  var date = new Date();
+  var dayOfMonth = date.getDate();
+  var month = date.getMonth() + 1;
+  var year = date.getFullYear();
+
+  // Loop through all li's to add the buttons
+  $(".allwindows li").each(function(index) {
+    // Set the index + 1 as the buttontext
+    var buttonData = index + 1;
+    // Also add class and attr to disable
+    var button = $("<button>" + buttonData + "</button>").addClass( "windowbutton" )
+    // Disable button when date is in the past.
+    if ( year <= 2016 && month < 12 || year <= 2016 && month === 12 && buttonData > dayOfMonth ) {
+        button.attr( "disabled", true);
+    } else {
+      button.attr( "disabled", false);
+    }
+    // Add button to li if not already there.
+      if ( !$(this).attr("windowbutton")) {
+      $(this).append(button);
+    }
+  })
 
   // When button clicked -> Show img.
   $("button").click(function() {
@@ -54,10 +55,15 @@ $(".allwindows li").each(function(index) {
   $(this).remove();
   });
 
-  // Make button only clickable when current date is today or in the past.
+    //Give all images & li's a class
+    $(".allwindows li img").attr( "class", "images");
+    $(".allwindows li").attr( "class", "window");
 
-  // Get the durrent date
+    // Not possible, click event doesn't fire.
+    // $("button").click(function() {
+    //   if ($("button").attr("disabled" === true)) {
+    //     alert("Be patient!");
+    //   }
+    // });
 
-
-    // If year === 2016 && month === 12 && (get data from button) (buttonData parseInt !<= dayofMonth) disable button.
 });

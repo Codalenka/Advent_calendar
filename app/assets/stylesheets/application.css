@@ -39,15 +39,15 @@
  }
 
  .window {
-   margin-top: 20px;
+   height: 200px;
+   width: 200px;
+   padding: 15px 32px;
    text-align: center;
-   padding: 20px;
  }
 
- .li img {
-   height: 5px;
+ .images {
+   height: 200px;
    width: 200px;
-
  }
 
  /*#overlay{

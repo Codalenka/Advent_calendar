@@ -44,12 +44,17 @@ $(".allwindows li").each(function(index) {
 
   // Make button only clickable when current date is today or in the past.
 
+  // Get the durrent date
+  $(function() {
+    var date = new Date();
+    var dayOfMonth = date.getDate();
+    var month = date.getMonth();
+    var year = date.getFullYear();
+    console.log(dayOfMonth);
+    console.log(month + 1);
+    console.log(year);
 
+    // If year === 2016 && month === 12 && (get data from button) (buttonData parseInt !<= dayofMonth) disable button.
 
-
-  // $(function() {
-  //   var today = new Date(),
-  //
-  //
-  // })
+  })
 });

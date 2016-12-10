@@ -15,6 +15,10 @@
 //= require turbolinks
 //= require_tree .
 
+var date = new Date();
+var dayOfMonth = date.getDate();
+var month = date.getMonth() + 1;
+var year = date.getFullYear();
 
 $(document).on('turbolinks:load', function(){
   //Hide the number
@@ -27,7 +31,15 @@ $(".allwindows li").each(function(index) {
   // Set the index + 1 as the buttontext
   var buttonData = index + 1;
   // Also add class and attr to disable
-  var button = $("<button>" + buttonData + "</button>").addClass( "windowbutton" ).attr( "disabled", false);
+  var button = $("<button>" + buttonData + "</button>").addClass( "windowbutton" )
+  // Disable button when date is in the past. Now only usable for 2016 -> delete year to make usable for 2017 etc.
+  if ( year <= 2016 && month < 12) {
+      button.attr( "disabled", true);
+  } else if (buttonData > dayOfMonth) {
+      button.attr( "disabled", true);
+  } else {
+    button.attr( "disabled", false);
+  }
   // Add button to li if not already there.
     if ( !$(this).attr("windowbutton")) {
     $(this).append(button);
@@ -45,16 +57,7 @@ $(".allwindows li").each(function(index) {
   // Make button only clickable when current date is today or in the past.
 
   // Get the durrent date
-  $(function() {
-    var date = new Date();
-    var dayOfMonth = date.getDate();
-    var month = date.getMonth();
-    var year = date.getFullYear();
-    console.log(dayOfMonth);
-    console.log(month + 1);
-    console.log(year);
+
 
     // If year === 2016 && month === 12 && (get data from button) (buttonData parseInt !<= dayofMonth) disable button.
-
-  })
 });

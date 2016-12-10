@@ -21,17 +21,30 @@ $(document).on('turbolinks:load', function(){
   $(".number").hide();
   $(".allwindows a").hide();
   // Add a button with the date
-  var buttonText = $(".number").each(function( index ) {
-    console.log ($(this).text() );
-  });
-  // var buttonText = $(".number").each(function( index ) {
-  //   var buttonNumber = ($(this).text() );
-  //   return buttonNumber;
-  // });
+//
+// $(".number").each(function() {
+//     var data = console.log(($(this).text()));
+//       // $("data").each(function() {
+//       //   console.log();
+  //     //     })
+//   // })
+// var buttonData = $(".allwindows li p").each(function() {
+//   console.log($(this).text());
+// })
 
-  // var buttonData = $(".allwindows li p").html();
-  var button = $("<button>" + buttonText + "</button>").addClass( "windowbutton" );
-  $(".allwindows li").append(button);
+// $("buttonData").each(function(){
+//
+// })
+// .html();
+// // var buttonData =
+$(".allwindows li").each(function() {
+  var buttonData = $(this).text();
+  var button = $("<button>" + buttonData + "</button>").addClass( "windowbutton" );
+  $(this).append(button);
+})
+
+
+
   // When button clicked -> Show img.
   $("button").click(function() {
     $(this).prev().prev().show();

@@ -15,19 +15,21 @@
 //= require turbolinks
 //= require_tree .
 
-
+"use strict";
 
 $(document).on('turbolinks:load', function(){
   //Hide the number of window
   $(".number").hide();
   //Hide the image of window (image = also link
   $(".allwindows a").hide();
+  $(".allwindows li").hide().fadeIn(500);
 
   // set varibale for time.
   var date = new Date();
   var dayOfMonth = date.getDate();
   var month = date.getMonth() + 1;
   var year = date.getFullYear();
+
 
   // Loop through all li's to add the buttons
   $(".allwindows li").each(function(index) {
@@ -65,5 +67,6 @@ $(document).on('turbolinks:load', function(){
     //     alert("Be patient!");
     //   }
     // });
+
 
 });

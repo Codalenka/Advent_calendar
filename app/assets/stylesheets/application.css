@@ -14,11 +14,45 @@
  *= require_self
  */
 
+
+/* Styles banner*/
+.banner {
+  padding: 10px;
+  text-align: center;
+  background: #346066;
+  margin-left: 355px;
+  margin-right: 320px;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  border-radius: 25px;
+  /*width: 1200px;*/
+}
+
+.banner-title {
+  padding-top: 10px;
+  margin: 0px;
+  text-align: center;
+  color: #FFD99B;
+  font-size: 400%;
+}
+
+.banner-subtitle {
+  margin: 10px;
+  color: #FFD99B;
+  padding: 10px;
+  font-size: 200%;
+}
+
+/* Styles windows*/
+
+body {
+  background: black;
+}
+
  .windowbutton {
-   color: red;
-   background-color: #4CAF50; /* Green */
+   color: #FFD99B;
+   background-color:#BF352F;
    border: none;
-   color: red;
    padding: 15px 32px;
    text-align: center;
    text-decoration: none;
@@ -26,29 +60,41 @@
    font-size: 100px;
    width: 200px;
    height: 200px;
+   border-radius: 50%;
+   outline-style: none;
  }
+
 
  .allwindows {
    list-style-type: none;
    display: flex;
-   justify-content: flex-start;
+   justify-content: center;
    align-items: flex-start;
+   align-content: center;
    flex-wrap: wrap;
    flex-direction: row;
-
+   margin-left: 200px;
+   margin-right: 200px;
  }
 
  .window {
    height: 200px;
    width: 200px;
-   padding: 15px 32px;
+   padding: 15px 15px;
    text-align: center;
+   outline-style: none;
+ }
+
+ .window:hover {
+   background-color: #26424B;
+   border-radius: 50%;
  }
 
  .images {
    height: 200px;
    width: 200px;
  }
+
 
  /*#overlay{
    background: rgba(0,0,0,0.7);
